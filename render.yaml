@@ -1,0 +1,10 @@
+# Render blueprint for the Dammed Kult room server (free plan).
+services:
+  - type: web
+    name: dammed-kult-rooms
+    runtime: python
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python room_server.py"
+    healthCheckPath: /healthz
+    autoDeploy: true
